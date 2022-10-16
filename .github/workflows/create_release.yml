@@ -8,18 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Show Me
-      run: ls -lha
     - name: Create Zip
-      run: zip release.zip THE_GUN_TURRET.wad THE_GUN_TURRET.txt
-    - name: Show Me
-      run: ls -lha
+      run: zip THE_GUN_TURRET.zip THE_GUN_TURRET.wad THE_GUN_TURRET.txt
     - name: Create Release
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: release.zip
-        asset_name: mything
+        file: THE_GUN_TURRET.zip
+        asset_name: THE_GUN_TURRET.zip
         tag: ${{ github.ref }}
         overwrite: true
         body: ""
