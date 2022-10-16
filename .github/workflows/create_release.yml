@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Show Me
+      run: ls -lha
     - name: Create Zip
       run: zip -r release.zip 
     - name: Create Release
