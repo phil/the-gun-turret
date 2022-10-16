@@ -28,6 +28,6 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: THE_GUN_TURRET.zip
         asset_name: THE_GUN_TURRET.zip
-        tag_name: Release ${{ env.release_date }}
+        tag: Release ${{ env.release_date }}
         overwrite: true
         body: ""
