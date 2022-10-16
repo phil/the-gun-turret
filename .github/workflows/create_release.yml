@@ -17,8 +17,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        release_name: Release ${{ env.release_date }}
-        tag_name: Release ${{ env.release_date }}
+        release_name: THE_GUN_TURRET ${{ env.release_date }}
+        tag_name: ${{ env.release_date }}
         body: ""
         draft: false
         prerelease: false
