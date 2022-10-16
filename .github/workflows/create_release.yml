@@ -11,6 +11,8 @@ jobs:
     - name: Show Me
       run: ls -lha
     - name: Create Zip
-      run: zip -r release.zip 
+      run: zip release.zip THE_GUN_TURRET.wad THE_GUN_TURRET.txt
+    - name: Show Me
+      run: ls -lha
     - name: Create Release
       run: echo "releasing ..."
