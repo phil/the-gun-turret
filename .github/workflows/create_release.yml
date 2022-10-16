@@ -10,5 +10,5 @@ jobs:
     - uses: actions/checkout@v1
     - name: Create Zip
       run: zip -r release.zip 
-    name: Create Release
+    - name: Create Release
       run: echo "releasing ..."
