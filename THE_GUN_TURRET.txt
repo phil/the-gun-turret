@@ -1,0 +1,6 @@
+===========================================================================
+Title                   : THE_GUN_TURRET.wad
+Date Finished           : In Progress
+Author                  : Phil Balchin
+Email Address           : phil [at] maniacalrobot.co.uk
+Description             : ...
