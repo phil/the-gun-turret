@@ -10,13 +10,14 @@ jobs:
     - uses: actions/checkout@v1
     - name: Create Zip
       run: zip THE_GUN_TURRET.zip THE_GUN_TURRET.wad THE_GUN_TURRET.txt
+    - name: Gernerate Date for Release version
+      run: echo "release_date=${{date "+%Y-%m-%d"}}" >> $GITHUB_ENV
     - name: Create Release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        release_name: Release ${{ env.release_date }}
         body: ""
         draft: false
         prerelease: false
@@ -26,6 +27,5 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: THE_GUN_TURRET.zip
         asset_name: THE_GUN_TURRET.zip
-        tag: ${{ github.ref }}
         overwrite: true
         body: ""
