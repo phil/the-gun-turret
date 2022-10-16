@@ -18,6 +18,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
         release_name: Release ${{ env.release_date }}
+        tag_name: Release ${{ env.release_date }}
         body: ""
         draft: false
         prerelease: false
@@ -27,5 +28,6 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: THE_GUN_TURRET.zip
         asset_name: THE_GUN_TURRET.zip
+        tag_name: Release ${{ env.release_date }}
         overwrite: true
         body: ""
