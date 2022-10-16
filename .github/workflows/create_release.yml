@@ -13,6 +13,7 @@ jobs:
     - name: Gernerate Date for Release version
       run: echo "release_date=$(date "+%Y-%m-%d-%H-%M-%S")" >> $GITHUB_ENV
     - name: Create Release
+      id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
@@ -22,11 +23,13 @@ jobs:
         body: ""
         draft: false
         prerelease: false
-    - name: Upload Zip
-      uses: svenstaro/upload-release-action@v2
+    - name: Upload Release Asset
+      id: upload_release_asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: THE_GUN_TURRET.zip
-        asset_name: THE_GUN_TURRET.zip
-        overwrite: true
-        body: ""
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: ./my-artifact.zip
+        asset_name: my-artifact.zip
+        asset_content_type: application/zip
