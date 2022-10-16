@@ -15,4 +15,11 @@ jobs:
     - name: Show Me
       run: ls -lha
     - name: Create Release
-      run: echo "releasing ..."
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: release.zip
+        asset_name: mything
+        tag: ${{ github.ref }}
+        overwrite: true
+        body: ""
