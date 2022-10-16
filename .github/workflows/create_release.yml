@@ -11,7 +11,7 @@ jobs:
     - name: Create Zip
       run: zip THE_GUN_TURRET.zip THE_GUN_TURRET.wad THE_GUN_TURRET.txt
     - name: Gernerate Date for Release version
-      run: echo "release_date=$(date "+%Y-%m-%d")" >> $GITHUB_ENV
+      run: echo "release_date=$(date "+%Y-%m-%d-%H-%M-%S")" >> $GITHUB_ENV
     - name: Create Release
       uses: actions/create-release@v1
       env:
