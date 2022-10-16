@@ -3,4 +3,11 @@ Title                   : THE_GUN_TURRET.wad
 Date Finished           : In Progress
 Author                  : Phil Balchin
 Email Address           : phil [at] maniacalrobot.co.uk
-Description             : ...
+Description             : A UAC Gun Turret has fallen under the control of Hells forces. Although the base was mostly staffed by Humans, the base was also testing some of the latest UAC battlefield weapons.
+Map Format              : GZDoom
+Map(s)                  : MAP01
+Ports Tested            : GZDoom
+IWAD                    : Doom 2
+Gameplay                : Single play
+Difficulty Settings     : No (UV only)
+Multiplayer Placement.  : No (single player only
